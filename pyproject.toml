@@ -1,0 +1,34 @@
+[project]
+name = "snowflake-smoketest"
+version = "0.0.1"
+description = ""
+authors = [
+    {name = "hugo.juhel@kyogo.ca"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dbt-core (>=1.11.8,<2.0.0)",
+    "dbt-snowflake (>=1.11.4,<2.0.0)",
+    "shandy-sqlfmt (>=0.29.0,<0.30.0)",
+    "pre-commit (>=4.5.1,<5.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.sqlfmt]
+line_length = 88
+quiet=true
+reset_cache=true
+exclude=[
+    "target/**/*",
+    "dbt_packages/**/*",
+    "tooling/templates/**/*"
+]
