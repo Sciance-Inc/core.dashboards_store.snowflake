@@ -28,7 +28,7 @@ Cette documentation couvre le Store général.
 
 [Documentation Store Snowflake](https://docs.dashboards-store-snowflake.sciance.ca)
 
-Cette documentation couvre le Store Snowflake et les tableaux de bord de formation professionnelle.
+Cette documentation couvre le Store Snowflake et le projet FP.
 
 ## Point de contrôle
 

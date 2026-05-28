@@ -2,7 +2,7 @@
   "name": "dashboards-store-snowflake-docs",
   "version": "0.1.0",
   "private": true,
-  "description": "Documentation du Store Snowflake pour la formation professionnelle.",
+  "description": "Documentation du Store Snowflake pour le projet FP.",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",

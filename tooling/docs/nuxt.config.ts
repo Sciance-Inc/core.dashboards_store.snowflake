@@ -69,7 +69,27 @@ export default defineNuxtConfig({
       rootDir: 'tooling/docs/content/fr'
     },
     toc: {
-      title: 'Sur cette page'
+      title: 'Sur cette page',
+      bottom: {
+        title: 'Communauté',
+        links: [
+          {
+            label: 'Dépôt Store historique',
+            to: 'https://github.com/Sciance-Inc/core.dashboards_store',
+            target: '_blank'
+          },
+          {
+            label: 'Documentation historique',
+            to: 'https://docs.dashboards-store.sciance.ca/',
+            target: '_blank'
+          },
+          {
+            label: 'Dépôt Store Snowflake',
+            to: 'https://github.com/Sciance-Inc/core.dashboards_store.snowflake',
+            target: '_blank'
+          }
+        ]
+      }
     },
     ui: {
       colors: {
@@ -94,7 +114,7 @@ export default defineNuxtConfig({
   llms: {
     domain: 'https://docs.dashboards-store-snowflake.sciance.ca',
     title: 'Documentation Store Snowflake',
-    description: 'Documentation du Store Snowflake pour la formation professionnelle.',
+    description: 'Documentation du Store Snowflake pour le projet FP.',
     full: {
       title: 'Documentation complete du Store Snowflake',
       description: 'Toutes les pages de documentation du Store Snowflake en format lisible par les assistants IA.'
