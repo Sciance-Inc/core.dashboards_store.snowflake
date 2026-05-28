@@ -1,0 +1,23 @@
+smoketest:
+  outputs:
+    dev:
+      account: <Ethics gradient> # -> Snowflake UI bottom left : View Account details
+      authenticator: externalbrowser
+      database: <A Fine Disregard For Awkward Facts> # -> Snowflake UI bottom left : Databases
+      role: <Zero Gravitas> # -> Snowflake UI : Switch Role : NIVEAU DE PERMISSION
+      schema: <Grant exchange of views>
+      threads: 1
+      type: snowflake
+      user: <Functional but not ethical>
+      warehouse: WH_XSMALL # -> Snowflake UI -> top right  Warehouses
+    prod:
+      account: <Just the Washing Instructions Chip in Life's Rich Tapestry> # -> Snowflake UI bottom left : View Account details
+      authenticator: externalbrowser
+      database: <I like dual meanings> # -> Snowflake UI bottom left : Databases
+      role: <That went totally over my head until right now> # -> Snowflake UI : Switch Role : NIVEAU DE PERMISSION
+      schema: <Pure Big Mad Boat Man>
+      threads: 1
+      type: snowflake
+      user: <Falling Outside The Normal Moral Constraints>
+      warehouse: WH_XSMALL # -> Snowflake UI -> top right  Warehouses
+  target: dev

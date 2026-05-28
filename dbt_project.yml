@@ -1,8 +1,8 @@
-name: "snowflakeSmoketest"
+name: "core.dashboards_store.snowflake"
 version: "0.0.1"
 config-version: 2
 
-profile: "smoketest" #"Make sure you a runing DBT from the cssXX repository, not the core.dashboards_store repository."
+profile: "dev" #"Make sure you a runing DBT from the cssXX repository, not the core.dashboards_store repository."
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
