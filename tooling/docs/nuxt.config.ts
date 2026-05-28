@@ -74,17 +74,12 @@ export default defineNuxtConfig({
         title: 'Communauté',
         links: [
           {
-            label: 'Dépôt Store historique',
-            to: 'https://github.com/Sciance-Inc/core.dashboards_store',
+            label: 'Sciance',
+            to: 'https://www.sciance.ca/',
             target: '_blank'
           },
           {
-            label: 'Documentation historique',
-            to: 'https://docs.dashboards-store.sciance.ca/',
-            target: '_blank'
-          },
-          {
-            label: 'Dépôt Store Snowflake',
+            label: 'GitHub',
             to: 'https://github.com/Sciance-Inc/core.dashboards_store.snowflake',
             target: '_blank'
           }

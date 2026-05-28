@@ -18,7 +18,8 @@ Le fichier `dbt_project.yml` indique le nom du *profile* à utiliser. Le *target
 
 Le *profile* est le bloc de connexion. Il contient les sorties disponibles.
 
-Exemple : un *profile* peut s'appeler `smoketest`.
+Dans les dépôts locaux générés par le template Snowflake, le *profile* s'appelle
+`snowflake`.
 
 ## Target
 

@@ -19,7 +19,7 @@ Choisir le mode demandé par l'équipe TI.
 Ce mode est adapté aux exécutions automatisées lorsque la politique TI l'autorise.
 
 ```yaml
-store_snowflake:
+snowflake:
   target: dev
   outputs:
     dev:
@@ -41,7 +41,7 @@ Ne jamais versionner la clé privée dans Git.
 Ce mode est adapté aux postes utilisateurs avec authentification fédérée.
 
 ```yaml
-store_snowflake:
+snowflake:
   target: dev
   outputs:
     dev:
@@ -71,5 +71,5 @@ Elle réduit les invites d'authentification répétées.
 Après avoir choisi un mode, lancer :
 
 ```bash
-dbt debug
+dbt debug --profiles-dir . --profile snowflake
 ```

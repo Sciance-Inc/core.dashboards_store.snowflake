@@ -14,7 +14,7 @@ Une erreur d'installation est normale. Il faut lire le premier message utile.
 
 ## Profil introuvable
 
-Vérifier que `profiles.yml` existe dans `~/.dbt/`.
+Vérifier que `profiles.yml` existe dans le dépôt local généré.
 
 Vérifier aussi que le nom du *profile* correspond au nom dans `dbt_project.yml`.
 
@@ -40,4 +40,5 @@ Ne jamais versionner la clé privée dans Git.
 
 ## Point de contrôle
 
-Après correction, relancer `dbt debug` avant de lancer un modèle.
+Après correction, relancer `dbt debug --profiles-dir . --profile snowflake`
+avant de lancer un modèle.

@@ -2,7 +2,7 @@ name: "{{ cookiecutter.css_short_name + '_dashboards_store_snowflake' }}"
 version: "1.0.0"
 config-version: 2
 
-profile: "dev"
+profile: "snowflake"
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]

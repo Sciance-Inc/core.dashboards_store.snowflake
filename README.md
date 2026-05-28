@@ -6,7 +6,7 @@ Ce dépôt contient le socle partagé qui permet de construire des marts et des 
 
 Le README donne le chemin de départ. La documentation complète est sur le site :
 
-<https://docs.dashboards-store-snowflake.sciance.ca>
+<https://docs-snowflake.dashboards-store.sciance.ca/>
 
 ## Le principe
 
@@ -22,7 +22,7 @@ Quand une règle est commune, elle appartient au core. Quand elle dépend d'un C
 Le *way to go* pour créer un dépôt local CSS est :
 
 ```bash
-poetry run spin_template
+poetry run spin_template -o ..
 ```
 
 Cette commande lance le template *cookiecutter* du core et crée par défaut le dépôt local dans le dossier parent de `core.dashboards_store.snowflake`.
@@ -35,7 +35,7 @@ dashboards_store/
   cssxx.dashboards_store.snowflake/
 ```
 
-Le projet généré utilise le profil *dbt* `dev` et référence ce dépôt comme package local. Les commandes métier doivent ensuite être lancées depuis le dépôt local, pas depuis le core.
+Le projet généré utilise le profil *dbt* `snowflake` avec les cibles `dev` et `prod`, et référence ce dépôt comme package local. Les commandes métier doivent ensuite être lancées depuis le dépôt local, pas depuis le core.
 
 ## Ce que tu trouveras ici
 

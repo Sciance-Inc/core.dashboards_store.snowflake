@@ -7,7 +7,15 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      Centre de services scolaire de la Pointe-de-l'Île
+      CSSPI
+    </a>
+    <span aria-hidden="true">·</span>
+    <a
+      href="https://www.sciance.ca/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Sciance
     </a>
   </div>
 </template>

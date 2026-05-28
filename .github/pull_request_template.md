@@ -28,8 +28,8 @@ cd ../<cssXX>.dashboards_store.snowflake
 git checkout <branche>
 git pull
 
-dbt deps
-dbt build --select +tag:<tag_du_perimetre>+
+dbt deps --profiles-dir .
+dbt build --profiles-dir . --profile snowflake --select +tag:<tag_du_perimetre>+
 ```
 
 # Liste de vérification
@@ -57,7 +57,7 @@ Lire chaque point avant de le cocher.
 
 - [ ] Le README ou le site de documentation renvoie vers la bonne page de référence.
 - [ ] Les changements de conventions sont expliqués dans le site de documentation.
-- [ ] Les exemples de commandes utilisent le profil *dbt* `dev`.
+- [ ] Les exemples de commandes utilisent le profil *dbt* `snowflake`.
 
 ## Pull request
 

@@ -18,7 +18,7 @@ pour créer un dépôt local CSS à partir du core Snowflake.
 ## Ce que le template crée
 
 - un `dbt_project.yml` local;
-- un `profiles-sample.yml`;
+- un `profiles.yml`;
 - un dossier `models`;
 - un dossier `seeds`;
 - un dossier `tests`;
@@ -44,9 +44,11 @@ dashboards_store/
   cssxx.dashboards_store.snowflake/
 ```
 
-Le projet généré utilise le profil dbt `dev`. Le fichier
-`profiles-sample.yml` généré contient un profil Snowflake `dev` avec des
-sorties `dev` et `prod`.
+Le projet généré utilise le profil dbt `snowflake`. Le fichier `profiles.yml`
+généré contient un profil `snowflake` avec des sorties `dev` et `prod`.
+
+Le fichier `profiles.yml` est généré pour faciliter le démarrage local, mais il
+reste ignoré par Git dans le dépôt local généré.
 
 Pour un test automatisé ou une génération sans questions interactives, il est
 possible de passer les arguments de *cookiecutter* après la commande :

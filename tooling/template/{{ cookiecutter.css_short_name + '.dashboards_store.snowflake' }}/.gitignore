@@ -41,7 +41,7 @@ dbt_modules/
 
 # Local configuration and secrets
 .user.yml
-profiles.yml
+{{ "profiles" ~ ".yml" }}
 .env
 .env.*
 !.env.example

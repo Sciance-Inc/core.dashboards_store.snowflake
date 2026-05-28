@@ -12,9 +12,8 @@ La documentation complète est ici :
 
 1. Lire la documentation du Store Snowflake.
 2. Vérifier que `packages.yml` pointe vers le bon chemin du core.
-3. Copier le contenu de `profiles-sample.yml` dans le profil *dbt* `dev`.
-4. Remplacer les valeurs Snowflake si elles sont encore des placeholders.
-5. Lancer `dbt deps`, puis `dbt debug --profile dev`.
+3. Remplacer les valeurs Snowflake dans `profiles.yml` si elles sont encore des placeholders.
+4. Lancer `dbt deps`, puis `dbt debug --profiles-dir . --profile snowflake`.
 
 ## Ce dépôt a été généré avec le bon chemin
 
@@ -36,8 +35,8 @@ dashboards_store/
 
 ## Contenu généré
 
-- `dbt_project.yml` avec le profil *dbt* `dev`;
-- `profiles-sample.yml` avec des sorties Snowflake `dev` et `prod`;
+- `dbt_project.yml` avec le profil *dbt* `snowflake`;
+- `profiles.yml` avec le profil `snowflake` et les sorties `dev` et `prod`;
 - `packages.yml` pointant vers `{{ cookiecutter.core_package_path }}`;
 - une arborescence minimale `models/interfaces`;
 - le mart `formation_professionnelle`;

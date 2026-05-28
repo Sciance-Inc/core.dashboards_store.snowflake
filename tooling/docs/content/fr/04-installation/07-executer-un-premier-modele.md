@@ -15,7 +15,7 @@ Le premier modèle sert à vérifier la connexion et le chargement d'un *seed*.
 ## Vérifier la connexion
 
 ```bash
-dbt debug
+dbt debug --profiles-dir . --profile snowflake
 ```
 
 Résultat attendu : la connexion Snowflake réussit.
@@ -23,7 +23,7 @@ Résultat attendu : la connexion Snowflake réussit.
 ## Charger le seed de séquence
 
 ```bash
-dbt seed --select int_sequence_0_to_1000
+dbt seed --profiles-dir . --profile snowflake --select int_sequence_0_to_1000
 ```
 
 Résultat attendu : la table du *seed* est créée.
@@ -31,7 +31,7 @@ Résultat attendu : la table du *seed* est créée.
 ## Exécuter le modèle de vérification
 
 ```bash
-dbt run --select smoketest
+dbt run --profiles-dir . --profile snowflake --select smoketest
 ```
 
 Résultat attendu : le modèle `smoketest` retourne les premières valeurs du *seed*.
@@ -39,7 +39,7 @@ Résultat attendu : le modèle `smoketest` retourne les premières valeurs du *s
 ## Tester le seed
 
 ```bash
-dbt test --select int_sequence_0_to_1000
+dbt test --profiles-dir . --profile snowflake --select int_sequence_0_to_1000
 ```
 
 Résultat attendu : les tests `not_null` et `unique` passent.

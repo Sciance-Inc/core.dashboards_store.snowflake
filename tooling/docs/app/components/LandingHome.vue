@@ -1,15 +1,12 @@
 <template>
   <main class="landing-home">
     <section class="landing-hero">
-      <div class="landing-hero__visual" aria-hidden="true">
-        <img
-          class="landing-hero__logo"
-          src="/logo-sciance.svg"
-          alt=""
-        >
-      </div>
-
       <div class="landing-shell landing-hero__content">
+        <img
+          class="landing-hero__brand"
+          src="/logo-sciance.svg"
+          alt="Sciance"
+        >
         <p class="landing-eyebrow">
           Documentation du Store Snowflake
         </p>
@@ -84,7 +81,7 @@
           <a href="/fr/04-installation/12-snowflake-authentification-et-profils-dbt">Connexion Snowflake par paire de clés ou SSO</a>
           <a href="/fr/06-creer-tableau-de-bord/01-partir-du-gabarit">Gabarit Power BI, stamper et déploiement</a>
           <a href="/fr/07-comment-contribuer/02-faire-une-pull-request">Contribution par Pull Request et revue</a>
-          <a href="/fr/08-aide-ia/01-se-faire-aider-par-une-ia">Aide IA avec llms.txt et MCP</a>
+          <a href="/fr/08-aide-ia/01-se-faire-aider-par-une-ia">Aide AI avec llms.txt et MCP</a>
         </div>
       </div>
     </section>
@@ -120,8 +117,15 @@
 
 .landing-hero__content {
   position: relative;
-  z-index: 1;
   padding: 5rem 0 4rem;
+}
+
+.landing-hero__brand {
+  display: block;
+  width: 15rem;
+  max-width: 70vw;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
 .landing-hero h1 {
@@ -181,27 +185,6 @@
 .landing-button:hover {
   outline: 2px solid var(--landing-accent);
   outline-offset: 2px;
-}
-
-.landing-hero__visual {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.landing-hero__logo {
-  position: absolute;
-  right: 4%;
-  top: 3rem;
-  width: 24rem;
-  max-width: 48vw;
-  opacity: 0.32;
-  filter: drop-shadow(0 1.5rem 3rem rgb(0 0 0 / 0.08));
-}
-
-:global(.dark) .landing-hero__logo {
-  opacity: 0.42;
-  filter: drop-shadow(0 1.5rem 3rem rgb(255 255 255 / 0.08));
 }
 
 .landing-section {
@@ -300,14 +283,6 @@
     font-size: 3rem;
   }
 
-  .landing-hero__logo {
-    top: 1.5rem;
-    right: 1rem;
-    width: 16rem;
-    max-width: 54vw;
-    opacity: 0.2;
-  }
-
   .landing-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -330,10 +305,9 @@
     font-size: 2.5rem;
   }
 
-  .landing-hero__logo {
+  .landing-hero__brand {
     width: 12rem;
-    max-width: 62vw;
-    opacity: 0.16;
+    margin-bottom: 1.5rem;
   }
 
   .landing-hero__lead {

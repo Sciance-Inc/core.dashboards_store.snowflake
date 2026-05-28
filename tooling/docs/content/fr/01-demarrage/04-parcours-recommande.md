@@ -15,13 +15,13 @@ Le meilleur parcours dépend du rôle du lecteur.
 ## Nouveau lecteur
 
 1. Lire `Pourquoi ces outils`.
-2. Lire `Store Snowflake`.
+2. Lire `Le comptoir : architecture`.
 3. Lire `Installation`.
 4. Exécuter le premier modèle.
 
 ## Personne TI
 
-1. Lire `Snowflake`.
+1. Lire les pages Snowflake dans `Installation`.
 2. Configurer les rôles et les bases.
 3. Valider l'authentification.
 4. Lire la page sur *externalbrowser* si le poste utilise *SAML* ou *SSO*.
@@ -29,8 +29,8 @@ Le meilleur parcours dépend du rôle du lecteur.
 ## Analyste ou développeur dbt
 
 1. Lire `dbt`.
-2. Lire `Store Snowflake`.
-3. Lire `Développer`.
+2. Lire `Le comptoir : architecture`.
+3. Lire `Utilisation`.
 4. Ouvrir une *Pull Request* pour proposer un changement.
 
 ## Point de contrôle
