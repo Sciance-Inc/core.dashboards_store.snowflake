@@ -1,6 +1,6 @@
 # {{ cookiecutter.css_short_name + '.dashboards_store.snowflake' }}
 
-Bienvenue dans le dépôt local Snowflake généré pour `{{ cookiecutter.css_short_name }}`.
+Ce dépôt est le dépôt local Snowflake généré pour `{{ cookiecutter.css_short_name }}`.
 
 Ce dépôt contient les adaptations propres au CSS. Le code commun, les conventions partagées, les macros et le gabarit Power BI viennent du package `core.dashboards_store.snowflake`.
 

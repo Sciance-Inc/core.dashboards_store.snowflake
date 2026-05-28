@@ -1,6 +1,6 @@
 # Documentation Store Snowflake
 
-Bienvenue dans le site de documentation du Store Snowflake.
+Ce dossier contient le site de documentation du Store Snowflake.
 
 Ce dossier contient la source du site publié ici :
 

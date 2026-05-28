@@ -1,6 +1,6 @@
 # core.dashboards_store.snowflake
 
-Bienvenue dans le dépôt commun du Store Snowflake.
+Ce dépôt est le dépôt commun du Store Snowflake.
 
 Ce dépôt contient le socle partagé qui permet de construire des marts et des tableaux de bord Snowflake de façon cohérente entre les CSS. Il porte les transformations *dbt* communes, les conventions de structure, les macros partagées, le gabarit Power BI et le template qui sert à créer les dépôts locaux.
 
@@ -37,7 +37,7 @@ dashboards_store/
 
 Le projet généré utilise le profil *dbt* `snowflake` avec les cibles `dev` et `prod`, et référence ce dépôt comme package local. Les commandes métier doivent ensuite être lancées depuis le dépôt local, pas depuis le core.
 
-## Ce que tu trouveras ici
+## Contenu du dépôt
 
 - `dbt_project.yml` : configuration *dbt* du package commun Snowflake.
 - `models/` : modèles communs, marts et dashboards partagés.
