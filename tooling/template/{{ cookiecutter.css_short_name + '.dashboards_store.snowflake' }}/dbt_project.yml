@@ -1,0 +1,51 @@
+name: "{{ cookiecutter.css_short_name + '_dashboards_store_snowflake' }}"
+version: "1.0.0"
+config-version: 2
+
+profile: "dev"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  {{ cookiecutter.css_short_name + '_dashboards_store_snowflake' }}:
+    +materialized: table
+
+    interfaces:
+      +materialized: ephemeral
+
+    marts:
+      formation_professionnelle:
+        +tags:
+          - "mart"
+          - "formation_professionnelle"
+        +schema: "formation_professionnelle"
+
+        staging:
+          +schema: "formation_professionnelle_staging"
+
+    dashboards:
+      formation_professionnelle:
+        +tags: ["formation_professionnelle"]
+
+        cohorts:
+          +schema: "dashboard_cohorts"
+
+          reporting:
+            +post-hook:
+              - "{{ '{{' }} core_dashboards_store_snowflake.stamp_model('dashboard_cohorts') {{ '}}' }}"
+
+  core_dashboards_store_snowflake:
+    +enabled: false
+
+vars:
+  is_context_core: false

@@ -1,0 +1,12 @@
+{
+    "author": "hugojuhel",
+    "css_short_name": "cssXX",
+    "snowflake_account": "<account>",
+    "snowflake_user": "<user>",
+    "snowflake_role": "bvd_rw_role",
+    "snowflake_warehouse": "WH_XSMALL",
+    "snowflake_dev_database": "store_dev",
+    "snowflake_prod_database": "store",
+    "snowflake_schema": "{{ cookiecutter.author }}",
+    "core_package_path": "../core.dashboards_store.snowflake"
+}

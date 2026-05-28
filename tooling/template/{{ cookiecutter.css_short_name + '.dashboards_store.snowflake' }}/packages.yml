@@ -1,0 +1,2 @@
+packages:
+  - local: "{{ cookiecutter.core_package_path }}"

@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "store-snowflake-docs": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "mcpdoc",
+        "mcpdoc",
+        "--urls",
+        "Store Snowflake:https://docs.dashboards-store-snowflake.sciance.ca/llms.txt"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+dev:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ cookiecutter.snowflake_account }}"
+      authenticator: externalbrowser
+      database: "{{ cookiecutter.snowflake_dev_database }}"
+      role: "{{ cookiecutter.snowflake_role }}"
+      schema: "{{ cookiecutter.snowflake_schema }}"
+      threads: 1
+      user: "{{ cookiecutter.snowflake_user }}"
+      warehouse: "{{ cookiecutter.snowflake_warehouse }}"
+
+    prod:
+      type: snowflake
+      account: "{{ cookiecutter.snowflake_account }}"
+      authenticator: externalbrowser
+      database: "{{ cookiecutter.snowflake_prod_database }}"
+      role: "{{ cookiecutter.snowflake_role }}"
+      schema: "{{ cookiecutter.snowflake_schema }}"
+      threads: 1
+      user: "{{ cookiecutter.snowflake_user }}"
+      warehouse: "{{ cookiecutter.snowflake_warehouse }}"
