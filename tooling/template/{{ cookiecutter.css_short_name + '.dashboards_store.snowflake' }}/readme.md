@@ -6,7 +6,7 @@ Ce dépôt contient les adaptations propres au CSS. Le code commun, les conventi
 
 La documentation complète est ici :
 
-<https://docs.dashboards-store-snowflake.sciance.ca>
+<https://docs-snowflake.dashboards-store.sciance.ca/>
 
 ## Par où commencer
 

@@ -19,13 +19,13 @@ Dans ce site, MCP doit servir seulement à lire la documentation.
 Le site publie un exemple de configuration :
 
 ```text
-https://docs.dashboards-store-snowflake.sciance.ca/mcp/docs-mcp.json
+https://docs-snowflake.dashboards-store.sciance.ca/mcp/docs-mcp.json
 ```
 
 Cette configuration branche un serveur de documentation sur :
 
 ```text
-https://docs.dashboards-store-snowflake.sciance.ca/llms.txt
+https://docs-snowflake.dashboards-store.sciance.ca/llms.txt
 ```
 
 ## Test de connexion

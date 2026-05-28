@@ -17,13 +17,13 @@ Il donne à l'IA le bon point de départ.
 ## Adresse officielle
 
 ```text
-https://docs.dashboards-store-snowflake.sciance.ca/llms.txt
+https://docs-snowflake.dashboards-store.sciance.ca/llms.txt
 ```
 
 Si disponible, la version complète est :
 
 ```text
-https://docs.dashboards-store-snowflake.sciance.ca/llms-full.txt
+https://docs-snowflake.dashboards-store.sciance.ca/llms-full.txt
 ```
 
 ## Comment l'utiliser

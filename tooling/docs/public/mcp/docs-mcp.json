@@ -8,7 +8,7 @@
         "mcpdoc",
         "mcpdoc",
         "--urls",
-        "Store Snowflake:https://docs.dashboards-store-snowflake.sciance.ca/llms.txt"
+        "Store Snowflake:https://docs-snowflake.dashboards-store.sciance.ca/llms.txt"
       ]
     }
   }

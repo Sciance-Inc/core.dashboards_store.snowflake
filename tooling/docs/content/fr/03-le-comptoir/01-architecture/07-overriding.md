@@ -131,10 +131,10 @@ Le contrat comprend :
 
 ## Pages à lire ensuite
 
-- [Overrider un modèle](/fr/03-comptoir-architecture/08-overrider-un-modele)
-- [Seeds de configuration](/fr/03-comptoir-architecture/09-seeds-de-configuration)
-- [Adapters et points d'injection](/fr/03-comptoir-architecture/10-adapters-et-points-dinjection)
-- [Contrats de données](/fr/03-comptoir-architecture/12-contrats-de-donnees)
+- [Overrider un modèle](/fr/03-le-comptoir/01-architecture/08-overrider-un-modele)
+- [Seeds de configuration](/fr/03-le-comptoir/01-architecture/09-seeds-de-configuration)
+- [Adapters et points d'injection](/fr/03-le-comptoir/01-architecture/10-adapters-et-points-dinjection)
+- [Contrats de données](/fr/03-le-comptoir/01-architecture/12-contrats-de-donnees)
 
 ## Point de contrôle
 

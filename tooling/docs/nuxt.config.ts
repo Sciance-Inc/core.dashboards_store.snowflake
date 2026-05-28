@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
   site: {
     name: 'Store Snowflake',
-    url: 'https://docs.dashboards-store-snowflake.sciance.ca'
+    url: 'https://docs-snowflake.dashboards-store.sciance.ca'
   },
 
   i18n: {
@@ -52,7 +52,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      siteUrl: 'https://docs.dashboards-store-snowflake.sciance.ca'
+      siteUrl: 'https://docs-snowflake.dashboards-store.sciance.ca'
     }
   },
 
@@ -101,13 +101,13 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', href: '/favicon.svg' },
-        { rel: 'canonical', href: 'https://docs.dashboards-store-snowflake.sciance.ca' }
+        { rel: 'canonical', href: 'https://docs-snowflake.dashboards-store.sciance.ca' }
       ]
     }
   },
 
   llms: {
-    domain: 'https://docs.dashboards-store-snowflake.sciance.ca',
+    domain: 'https://docs-snowflake.dashboards-store.sciance.ca',
     title: 'Documentation Store Snowflake',
     description: 'Documentation du Store Snowflake pour le projet FP.',
     full: {

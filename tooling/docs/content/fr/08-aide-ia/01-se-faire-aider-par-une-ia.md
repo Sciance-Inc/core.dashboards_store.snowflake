@@ -17,7 +17,7 @@ L'IA peut expliquer les étapes. Elle ne remplace pas la revue, les règles TI n
 ## Prompt à copier
 
 ```text
-Lis la documentation à partir de https://docs.dashboards-store-snowflake.sciance.ca/llms.txt et aide-moi à configurer mon profil dbt Snowflake étape par étape. Pose-moi une question à la fois.
+Lis la documentation à partir de https://docs-snowflake.dashboards-store.sciance.ca/llms.txt et aide-moi à configurer mon profil dbt Snowflake étape par étape. Pose-moi une question à la fois.
 ```
 
 ## Ne jamais partager

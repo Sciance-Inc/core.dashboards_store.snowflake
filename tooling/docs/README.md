@@ -4,7 +4,7 @@ Bienvenue dans le site de documentation du Store Snowflake.
 
 Ce dossier contient la source du site publié ici :
 
-<https://docs.dashboards-store-snowflake.sciance.ca>
+<https://docs-snowflake.dashboards-store.sciance.ca/>
 
 Le site est la référence pour comprendre le projet, installer l'environnement, créer un dépôt local avec `poetry run spin_template`, travailler avec *dbt* et Snowflake, puis contribuer proprement.
 
