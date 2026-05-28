@@ -1,8 +1,8 @@
-name: "core.dashboards_store.snowflake"
+name: "core_dashboards_store_snowflake"
 version: "0.0.1"
 config-version: 2
 
-profile: "dev" #"Make sure you a runing DBT from the cssXX repository, not the core.dashboards_store repository."
+profile: "dev" #"Make sure you a runing DBT from the cssXX repository, not the core.dashboards_store.snowflake repository."
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -15,3 +15,31 @@ target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
+
+models:
+  core_dashboards_store_snowflake:
+    +pre-hook:
+      - "{{ core_dashboards_store_snowflake.init_metadata_table() }}"
+    +post-hook:
+      - "{{ core_dashboards_store_snowflake.purge_metadata_table() }}"
+
+    marts:
+      formation_professionnelle:
+        +tags:
+          - "mart"
+          - "formation_professionnelle"
+        +schema: "formation_professionnelle"
+
+        staging:
+          +schema: "formation_professionnelle_staging"
+
+    dashboards:
+      formation_professionnelle:
+        +tags: ["formation_professionnelle"]
+
+        cohorts:
+          +schema: "dashboard_cohorts"
+
+          reporting:
+            +post-hook:
+              - "{{ core_dashboards_store_snowflake.stamp_model('dashboard_cohorts') }}"

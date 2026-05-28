@@ -1,0 +1,79 @@
+version: 2
+
+macros:
+  - name: init_metadata_table
+    description: >
+      Public stamper entrypoint called from the model pre-hook configured in
+      `dbt_project.yml`. Dispatches to the active adapter implementation and
+      prepares the metadata relation used by dashboard freshness tracking. On
+      Snowflake, the dispatched implementation creates the schema named
+      `<target.schema>_metadata` and the table named `stamper` when they do not
+      already exist.
+    arguments: []
+
+  - name: purge_metadata_table
+    description: >
+      Public stamper entrypoint called from the model post-hook configured in
+      `dbt_project.yml`. Dispatches to the active adapter implementation and
+      removes stale stamper rows so the metadata table keeps only the latest
+      successful stamp for each `dashboard_name` and `table_name` pair.
+    arguments: []
+
+  - name: stamp_model
+    description: >
+      Public post-hook macro used by dashboard reporting models. Dispatches to
+      the active adapter implementation and records the current model name, the
+      provided dashboard name, and the current run timestamp in the stamper
+      metadata table.
+    arguments:
+      - name: dashboard_name
+        type: string
+        description: >
+          Dashboard freshness key written to `stamper.dashboard_name`. This
+          value must match the Power BI filter used by the dashboard freshness
+          card, usually a stable schema-like name such as
+          `dashboard_absenteeism`.
+
+  - name: _snowflake_stamper_table_exists
+    description: >
+      Internal Snowflake helper used by the purge and stamp implementations. It
+      queries `information_schema.tables` and returns whether the `stamper`
+      table exists in the provided metadata schema.
+    arguments:
+      - name: schema_name
+        type: string
+        description: >
+          Metadata schema to inspect, without a database prefix. The stamper
+          macros derive this value from the active dbt target as
+          `<target.schema>_metadata`.
+
+  - name: snowflake__init_metadata_table
+    description: >
+      Snowflake implementation for `init_metadata_table`. Creates the metadata
+      schema named `<target.schema>_metadata`, then creates
+      `<target.schema>_metadata.stamper` with the columns `dashboard_name`,
+      `table_name`, `run_ended_at`, and `idx` when the table is missing.
+    arguments: []
+
+  - name: snowflake__purge_metadata_table
+    description: >
+      Snowflake implementation for `purge_metadata_table`. If the stamper table
+      exists, deletes every row except the most recent `run_ended_at` for each
+      `dashboard_name` and `table_name` pair. This keeps the Power BI freshness
+      card aligned on the latest successful reporting-table refresh.
+    arguments: []
+
+  - name: snowflake__stamp_model
+    description: >
+      Snowflake implementation for `stamp_model`. If the metadata table exists,
+      inserts one stamper row for the currently executing dbt model. The row
+      stores the dashboard key, `this.name` as the table name, the current
+      timestamp cast to `timestamp_ntz`, and a Snowflake `uuid_string()` value as
+      `idx`.
+    arguments:
+      - name: dashboard_name
+        type: string
+        description: >
+          Dashboard freshness key forwarded by the public `stamp_model` macro.
+          The value is escaped before insertion and stored in
+          `stamper.dashboard_name`.
