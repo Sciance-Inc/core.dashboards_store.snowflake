@@ -1,8 +1,8 @@
 ---
 title: Règles d'affaires locales
-description: Documenter les différences entre CSS.
+description: Documenter les règles qui personnalisent le Store localement.
 author: hugo.juhel@sciance.ca
-updatedAt: 2026-05-28
+updatedAt: 2026-06-01
 ---
 
 ::page-metadata
@@ -13,6 +13,8 @@ updatedAt: 2026-05-28
 Une règle d'affaires locale décrit une décision propre à une organisation.
 
 Elle doit être visible. Elle ne doit pas être cachée dans une requête difficile à trouver.
+
+La personnalisation locale est normale. Elle devient risquée seulement lorsqu'elle n'est pas nommée, documentée ou testée.
 
 ## Exemples
 

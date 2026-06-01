@@ -1,8 +1,8 @@
 ---
 title: Contrats de données
-description: Stabiliser les sorties attendues.
+description: Stabiliser les sorties attendues malgré les personnalisations locales.
 author: hugo.juhel@sciance.ca
-updatedAt: 2026-05-28
+updatedAt: 2026-06-01
 ---
 
 ::page-metadata
@@ -12,11 +12,24 @@ updatedAt: 2026-05-28
 
 Un contrat de données décrit ce qu'une table doit fournir.
 
-Il protège les modèles suivants et les tableaux de bord.
+Il protège les modèles suivants et les tableaux de bord, surtout lorsqu'un dépôt local personnalise le Store.
+
+## Pourquoi les contrats sont nécessaires
+
+Les *seeds*, les *adapters* et les *overrides* permettent de personnaliser le Store.
+
+Cette personnalisation est utile, mais elle doit rester contrôlée.
+
+Le contrat permet de dire:
+
+```text
+La règle locale peut changer.
+La sortie attendue doit rester stable.
+```
 
 ## Ce que le contrat doit préciser
 
-Un contrat doit indiquer :
+Un contrat doit indiquer:
 
 - le nom du modèle;
 - le grain;
@@ -24,6 +37,7 @@ Un contrat doit indiquer :
 - les types importants;
 - les valeurs attendues si elles sont limitées;
 - les tests;
+- les modèles qui consomment la table;
 - les tableaux de bord qui consomment la table.
 
 ## Exemple de contrat
@@ -51,15 +65,15 @@ models:
           - not_null
 ```
 
-## Contrat et override
+## Contrat et personnalisation
 
-Un *override* peut changer la méthode de calcul.
+Un dépôt local peut changer la méthode de calcul.
 
 Il ne doit pas retirer une colonne attendue.
 
 Il ne doit pas changer le grain sans décision explicite.
 
-Exemple :
+Exemple:
 
 ```sql
 -- Contrat attendu
@@ -100,4 +114,4 @@ poetry run dbt build --select stg_eleves_reguliers+
 
 ## Point de contrôle
 
-Après une modification locale, la question principale est : est-ce que les tableaux de bord peuvent encore lire la sortie sans changement?
+Après une personnalisation locale, la question principale est: est-ce que les tableaux de bord et les modèles suivants peuvent encore lire la sortie sans changement?

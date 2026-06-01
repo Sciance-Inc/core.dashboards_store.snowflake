@@ -2,7 +2,7 @@
 title: Overrider un modèle
 description: Remplacer localement un modèle fourni par le core.
 author: hugo.juhel@sciance.ca
-updatedAt: 2026-05-28
+updatedAt: 2026-06-01
 ---
 
 ::page-metadata
@@ -12,10 +12,7 @@ updatedAt: 2026-05-28
 
 Un *override* de modèle sert à remplacer un modèle du core par une version locale.
 
-Il faut faire deux choses :
-
-1. créer un modèle local avec le même nom;
-2. désactiver le modèle du package commun.
+C'est le mécanisme à utiliser lorsque le modèle commun existe déjà, mais que sa logique ne correspond pas à la réalité locale.
 
 ## Avant de commencer
 
@@ -30,12 +27,13 @@ core.dashboards_store.snowflake/
           stg_eleves_reguliers.sql
 ```
 
-Lire ensuite les fichiers voisins :
+Lire ensuite les fichiers voisins:
 
 - le modèle SQL;
 - le fichier `schema.yml`, s'il existe;
 - les modèles qui font `ref("stg_eleves_reguliers")`;
-- les tests associés.
+- les tests associés;
+- les tableaux de bord qui dépendent du modèle.
 
 Cette lecture sert à comprendre le contrat à respecter.
 
@@ -52,7 +50,7 @@ cssxx.dashboards_store.snowflake/
           stg_eleves_reguliers.sql
 ```
 
-Exemple de modèle local :
+Exemple de modèle local:
 
 ```sql
 -- cssxx.dashboards_store.snowflake/models/marts/formation_professionnelle/staging/stg_eleves_reguliers.sql
@@ -65,7 +63,7 @@ from {{ ref("stg_inscriptions_fp") }}
 where statut_inscription in ('REGULIER', 'ACTIF')
 ```
 
-Le modèle local peut utiliser une règle différente. Il doit garder les colonnes attendues par les modèles suivants.
+Le modèle local peut utiliser une règle différente. Il doit garder les colonnes et le grain attendus par les modèles suivants.
 
 ## Désactiver le modèle du core
 
@@ -86,51 +84,45 @@ models:
 
 Le nom final est le nom du fichier sans `.sql`.
 
-## Exemple observé dans le Store existant
+## Exemple d'override d'interface
 
-Dans le Store existant, le core avait une interface `i_gpm_t_mat`.
+Le core peut fournir une interface minimale.
 
 ```sql
--- core.dashboards_store/models/interfaces/gpi/i_gpm_t_mat.sql
+-- core.dashboards_store.snowflake/models/interfaces/formation_professionnelle/i_programmes.sql
+
 select
-    id_eco,
-    mat,
-    descr,
-    descr_abreg,
-    unites
-from {{ var("database_gpi") }}.dbo.gpm_t_mat
+    code_programme,
+    description_programme
+from FORMATION_PROFESSIONNELLE_RAW.PARAMETRES.PROGRAMMES
 ```
 
-CSSPI avait besoin de colonnes supplémentaires. Le dépôt local a donc fourni son propre modèle.
+Un dépôt local peut avoir besoin d'une colonne supplémentaire.
 
 ```sql
--- csspi.dashboards_store/models/interfaces/gpi/i_gpm_t_mat.sql
+-- cssxx.dashboards_store.snowflake/models/interfaces/formation_professionnelle/i_programmes.sql
+
 select
-    id_eco,
-    mat,
-    mat_off,
-    descr,
-    descr_abreg,
-    unites,
-    cat_mat,
-    classe,
-    type_unites
-from {{ var("database_gpi") }}.dbo.gpm_t_mat
+    code_programme,
+    description_programme,
+    ordre_enseignement,
+    secteur_local
+from CSSXX_RAW.PARAMETRES.PROGRAMMES
 ```
 
 Le dépôt local désactive ensuite le modèle du core.
 
 ```yaml
-# csspi.dashboards_store/dbt_project.yml
+# cssxx.dashboards_store.snowflake/dbt_project.yml
 models:
-  core_dashboards_store:
+  core_dashboards_store_snowflake:
     interfaces:
-      gpi:
-        i_gpm_t_mat:
+      formation_professionnelle:
+        i_programmes:
           +enabled: false
 ```
 
-Le principe est le même dans le Store Snowflake. Le nom du package devient `core_dashboards_store_snowflake`.
+Le reste du Store peut continuer à lire `ref("i_programmes")`.
 
 ## Tester l'override
 
@@ -158,4 +150,4 @@ poetry run dbt build --select tag:formation_professionnelle
 
 ## Point de contrôle
 
-Un bon *override* doit pouvoir remplacer le modèle commun sans obliger les tableaux de bord à changer.
+Un bon *override* personnalise le calcul sans forcer les tableaux de bord à changer. Si le contrat doit changer, la décision doit être explicite.
