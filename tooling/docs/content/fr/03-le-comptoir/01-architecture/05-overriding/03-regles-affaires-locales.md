@@ -35,7 +35,7 @@ Un CSS peut regrouper des programmes différemment pour répondre à sa réalit�
 
 ## Ce qui doit être documenté
 
-Pour chaque règle locale importante, documenter :
+Pour chaque règle locale importante, documenter:
 
 - le besoin;
 - la décision;
@@ -44,7 +44,7 @@ Pour chaque règle locale importante, documenter :
 - les impacts sur les indicateurs;
 - les tests exécutés.
 
-Exemple dans une *Pull Request* :
+Exemple dans une *Pull Request*:
 
 ```md
 Règle locale : élèves réguliers FP

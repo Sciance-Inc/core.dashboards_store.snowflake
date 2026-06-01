@@ -29,16 +29,6 @@ Exemples:
 
 Dans ces cas, le core définit le contrat. Le dépôt local écrit la requête.
 
-## Différence entre seed, adapter et override
-
-| Besoin | Mécanisme |
-| --- | --- |
-| La règle est une liste simple. | *Seed* |
-| Le core attend une requête SQL locale. | *Adapter* |
-| Le core fournit déjà une logique, mais elle ne convient pas. | *Override* |
-
-Ces mécanismes servent tous la personnalisation, mais ils ne répondent pas au même besoin.
-
 ## Contrat d'un adapter
 
 Le contrat doit dire:
@@ -49,7 +39,7 @@ Le contrat doit dire:
 - les tests minimaux;
 - les tags à utiliser;
 - le schéma cible;
-- les modèles ou dashboards qui consomment la sortie.
+- les modèles ou tableaux de bord qui consomment la sortie.
 
 Exemple:
 

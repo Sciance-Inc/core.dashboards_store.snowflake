@@ -54,7 +54,7 @@
             <h3>Configurer Snowflake</h3>
             <p>Créer les environnements, les rôles et les accès.</p>
           </a>
-          <a class="landing-card" href="/fr/03-le-comptoir/01-architecture/07-overriding">
+          <a class="landing-card" href="/fr/03-le-comptoir/01-architecture/05-overriding/01-concept">
             <span class="landing-card__index">04</span>
             <h3>Adapter localement</h3>
             <p>Utiliser les overrides, les seeds et les adapters.</p>
@@ -77,7 +77,7 @@
 
         <div class="landing-list">
           <a href="/fr/02-dbt/01-presentation-dbt">dbt, profils, commandes, seeds, modèles et tests</a>
-          <a href="/fr/03-le-comptoir/01-architecture/02-deux-repos-et-responsabilites">Deux dépôts, responsabilités et logique d'héritage</a>
+          <a href="/fr/03-le-comptoir/01-architecture/01-architecture/01-vue-densemble">Architecture, responsabilités et personnalisation</a>
           <a href="/fr/04-installation/12-snowflake-authentification-et-profils-dbt">Connexion Snowflake par paire de clés ou SSO</a>
           <a href="/fr/03-le-comptoir/03-creer-tableau-de-bord/01-partir-du-gabarit">Gabarit Power BI, stamper et déploiement</a>
           <a href="/fr/07-comment-contribuer/02-faire-une-pull-request">Contribution par Pull Request et revue</a>

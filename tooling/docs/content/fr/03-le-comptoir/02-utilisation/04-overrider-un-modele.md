@@ -59,9 +59,9 @@ poetry run dbt build --select stg_eleves_reguliers+
 
 ## Documentation détaillée
 
-La page [Overrider un modèle](/fr/03-le-comptoir/01-architecture/09-overrider-un-modele) décrit le mécanisme complet.
+La page [Overrider un modèle](/fr/03-le-comptoir/01-architecture/05-overriding/02-overrider-un-modele) décrit le mécanisme complet.
 
-La page [Contrats de données](/fr/03-le-comptoir/01-architecture/13-contrats-de-donnees) décrit les vérifications à faire.
+La page [Contrats de données](/fr/03-le-comptoir/01-architecture/05-overriding/04-contrats-de-donnees) décrit les vérifications à faire.
 
 ## Point de contrôle
 

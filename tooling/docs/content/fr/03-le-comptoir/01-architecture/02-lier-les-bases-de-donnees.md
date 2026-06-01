@@ -10,6 +10,10 @@ updatedAt: 2026-06-01
 
 # Lier les bases de données
 
+::alert{type="warning"}
+Les bases accédées par le Store devraient être pseudo-anonymisées lorsque c'est possible. Les traitements analytiques n'ont généralement pas besoin d'utiliser des renseignements personnels directement identifiants.
+::
+
 Lier les bases de données consiste à indiquer au dépôt local où se trouvent les sources à lire.
 
 Dans Snowflake, une table peut être référencée avec un nom pleinement qualifié.
@@ -27,10 +31,10 @@ Il y a deux niveaux de configuration.
 
 | Niveau | Rôle |
 | --- | --- |
-| Profil *dbt* | Indique où *dbt* construit les objets du projet. |
+| Profil *dbt* | Indique où *dbt* se connecte et où il construit les objets du projet. |
 | Interfaces | Indiquent où lire les sources et comment les normaliser. |
 
-Le profil ne remplace pas les *interfaces*. Il donne la destination de travail. Les *interfaces* décrivent les entrées métier.
+Le profil ne remplace pas les *interfaces*. Il donne le contexte d'exécution. Les *interfaces* décrivent les entrées métier.
 
 ## Profil local
 
@@ -84,6 +88,29 @@ Les modèles suivants ne devraient pas lire directement `GPI_RAW.PUBLIC.ELEVES`.
 select *
 from {{ ref("i_eleves") }}
 ```
+
+## Variables de bases sources
+
+Un dépôt local peut aussi centraliser les noms de bases dans `dbt_project.yml`.
+
+```yaml
+# cssxx.dashboards_store.snowflake/dbt_project.yml
+vars:
+  database_gpi: "GPI_RAW"
+  database_grhpaie: "GRHPAIE_RAW"
+  database_jade: "JADE_RAW"
+```
+
+Les interfaces peuvent ensuite utiliser ces variables.
+
+```sql
+select
+    fiche as id_eleve_source,
+    code_perm
+from {{ var("database_gpi") }}.PUBLIC.ELEVES
+```
+
+Cette approche est utile lorsque plusieurs interfaces lisent la même base.
 
 ## Pourquoi passer par les interfaces
 

@@ -139,10 +139,9 @@ Créer le CSV local avec le même nom, puis désactiver le *seed* du core.
 # cssxx.dashboards_store.snowflake/dbt_project.yml
 seeds:
   core_dashboards_store_snowflake:
-    dashboards:
-      formation_professionnelle:
-        paiements_fp:
-          +enabled: false
+    formation_professionnelle:
+      paiements_fp:
+        +enabled: false
 ```
 
 ## Point de contrôle
