@@ -34,7 +34,7 @@ macros:
           card, usually a stable schema-like name such as
           `dashboard_absenteeism`.
 
-  - name: _snowflake_stamper_table_exists
+  - name: snowflake_stamper_table_exists
     description: >
       Internal Snowflake helper used by the purge and stamp implementations. It
       queries `information_schema.tables` and returns whether the `stamper`

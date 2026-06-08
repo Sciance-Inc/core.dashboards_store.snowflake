@@ -64,7 +64,7 @@ Usage: reporting model post-hook. Args: dashboard_name.
 Documentation: see macros/introspection/schema.yml.
 Usage: internal Snowflake helper. Args: schema_name.
 #}
-{% macro _snowflake_stamper_table_exists(schema_name) %}
+{% macro snowflake_stamper_table_exists(schema_name) %}
 
     {% set query %}
     select count(*) as table_count
@@ -126,7 +126,7 @@ Usage: Snowflake implementation for purge_metadata_table. Args: none.
         {% set schema_name = target.schema ~ "_metadata" %}
         {% set table_name = schema_name ~ ".stamper" %}
 
-        {% if _snowflake_stamper_table_exists(schema_name) %}
+        {% if core_dashboards_store_snowflake.snowflake_stamper_table_exists(schema_name) %}
 
             {% set query %}
             delete from {{ table_name }}
@@ -166,7 +166,7 @@ Usage: Snowflake implementation for stamp_model. Args: dashboard_name.
         {% set escaped_dashboard_name = dashboard_name | replace("'", "''") %}
         {% set escaped_table_name = this.name | replace("'", "''") %}
 
-        {% if _snowflake_stamper_table_exists(schema_name) %}
+        {% if core_dashboards_store_snowflake.snowflake_stamper_table_exists(schema_name) %}
 
             {% set query %}
             insert into {{ table_name }} (
