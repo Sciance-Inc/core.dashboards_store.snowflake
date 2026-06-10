@@ -43,3 +43,6 @@ models:
           reporting:
             +post-hook:
               - "{{ core_dashboards_store_snowflake.stamp_model('dashboard_cohorts') }}"
+
+vars:
+  database_dfondation: "DFONDATION"

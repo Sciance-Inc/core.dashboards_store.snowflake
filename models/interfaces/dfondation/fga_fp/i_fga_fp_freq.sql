@@ -1,0 +1,23 @@
+select
+    frequentation_id as id_freq,
+    fiche,
+    annee,
+    frequentation_no as no_freq,
+    frequentation_type_code as code_type_freq,
+    frequentation_principale_ind as ind_freq_princ,
+    frequentation_un_jour_ind as ind_freq_jour,
+    etablissement_code as code_etab,
+    debut_date as date_debut,
+    fin_date as date_fin,
+    statut_code as statut,
+    sifca_fin_date as date_fin_sifca,
+    depart_motif_code as code_motif_dep,
+    depart_raison_code as code_raison_dep,
+    clientele_code as code_client,
+    sanction_regime_code as reg_sanct,
+    parcours_type_code as type_parc,
+    programme_code as code_prog,
+    sarca_ind as ind_sarc,
+    resultat_ind as ind_res,
+    transmission_ind as ind_transm
+from {{ var("database_dfondation") }}.affaires_scolaire_fgafp.dim_frequentation
