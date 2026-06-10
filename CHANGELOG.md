@@ -2,6 +2,13 @@
 
 
 
+## v0.2.0+20260610 (2026-06-10)
+
+### Features
+
+* feat: ajout des interfaces fpa fp de dfondation ([`e1c0439`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/e1c043916beed36bca9233c6c2e2c08939db30f6))
+
+
 ## v0.1.0+20260610 (2026-06-10)
 
 
