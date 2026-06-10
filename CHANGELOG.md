@@ -2,6 +2,9 @@
 
 
 
+## v0.1.0+20260610 (2026-06-10)
+
+
 ## v0.1.0+20260608 (2026-06-08)
 
 ### Bug fixes
@@ -9,6 +12,8 @@
 * fix: qualifying macro ([`9e6e746`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/9e6e746a8851b1fd80ad1d2f4c0eac4e3cc274fd))
 
 ### Chores
+
+* chore(docs): updating to docus 5 ([`9b26e81`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/9b26e8128787cb6806edbce8a41013b7faf853c0))
 
 * chore: repurposing the repo ([`35b9349`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/35b934939fd83dfb2fc9b6b5473151ff417cf442))
 
