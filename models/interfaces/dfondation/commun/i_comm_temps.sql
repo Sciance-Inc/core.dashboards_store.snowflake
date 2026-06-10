@@ -1,0 +1,21 @@
+select
+    temps_id as id_temps,
+    date,
+    annee,
+    mois_no as mois,
+    trimestre,
+    mois_nom as mois_descr,
+    semaine_no as no_semaine,
+    mois_no_semaine as date_debut_semaine,
+    mois_jour_no as jour,
+    semaine_jour_no as jour_semaine,
+    jour_nom as jour_semaine_descr,
+    annee_scolaire as annee_scolaire,
+    annee_scolaire_description as annee_scolaire_descr,
+    annee_scolaire_trimestre as annee_scolaire_trim,
+    annee_scolaire_periode_no as annee_scolaire_per,
+    annee_financiere,
+    annee_financiere_description as annee_financiere_descr,
+    annee_financiere_trimestre as annee_financiere_trim,
+    annee_financiere_periode_no as annee_financiere_per
+from {{ var("database_dfondation") }}.affaires_dimensions_communes.dim_temps
