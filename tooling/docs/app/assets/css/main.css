@@ -1,9 +1,10 @@
 @import "tailwindcss";
-@import "@nuxt/ui-pro";
+@import "@nuxt/ui";
 
 @source "../../../content/**/*";
 @source "../../components/**/*";
 @source "../../../node_modules/docus/app/**/*";
+@source "../../../node_modules/docus/modules/assistant/**/*";
 
 @theme static {
   --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;

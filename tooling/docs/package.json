@@ -5,13 +5,15 @@
   "description": "Documentation du Store Snowflake pour le projet FP.",
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
+    "build": "NODE_OPTIONS=--max-old-space-size=3072 nuxt build",
+    "generate": "NODE_OPTIONS=--max-old-space-size=3072 nuxt generate",
     "preview": "nuxt preview"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^10.4.0",
-    "docus": "^4.2.0"
+    "better-sqlite3": "^12.10.0",
+    "docus": "5.11.0",
+    "nuxt": "^4.4.6"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

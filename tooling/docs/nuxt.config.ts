@@ -48,6 +48,12 @@ export default defineNuxtConfig({
     ]
   },
 
+  routeRules: {
+    '/': {
+      redirect: '/fr'
+    }
+  },
+
   css: ['~/assets/css/main.css'],
 
   runtimeConfig: {
@@ -66,7 +72,7 @@ export default defineNuxtConfig({
       name: 'core.dashboards_store.snowflake',
       url: 'https://github.com/Sciance-Inc/core.dashboards_store.snowflake',
       branch: 'main',
-      rootDir: 'tooling/docs/content/fr'
+      rootDir: 'tooling/docs'
     },
     toc: {
       title: 'Sur cette page',
@@ -101,7 +107,7 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', href: '/favicon.svg' },
-        { rel: 'canonical', href: 'https://docs-snowflake.dashboards-store.sciance.ca' }
+        { rel: 'canonical', href: 'https://docs-snowflake.dashboards-store.sciance.ca/fr' }
       ]
     }
   },
@@ -117,7 +123,31 @@ export default defineNuxtConfig({
   },
 
   fonts: {
-    provider: 'none'
+    providers: {
+      adobe: false,
+      bunny: false,
+      fontshare: false,
+      fontsource: false,
+      google: false,
+      googleicons: false,
+      npm: false
+    }
+  },
+
+  colorMode: {
+    preference: 'light',
+    fallback: 'light'
+  },
+
+  icon: {
+    provider: 'server',
+    serverBundle: {
+      collections: ['lucide', 'simple-icons', 'vscode-icons']
+    }
+  },
+
+  ogImage: {
+    enabled: false
   },
 
   vite: {
