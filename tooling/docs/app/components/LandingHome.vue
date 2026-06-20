@@ -13,9 +13,9 @@
           alt="Sciance"
         >
         <p class="landing-eyebrow">
-          Documentation du Store Snowflake
+          Documentation
         </p>
-        <h1>Store Snowflake</h1>
+        <h1>Bibliothèque de tableaux de bord Snowflake</h1>
         <p class="landing-hero__lead">
           Un guide de travail pour construire, versionner et maintenir des tableaux de bord de formation professionnelle avec <em>Snowflake</em> et <em>dbt</em>.
         </p>
@@ -154,7 +154,6 @@
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 .landing-actions {
