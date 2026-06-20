@@ -2,16 +2,6 @@
   <main class="landing-home">
     <section class="landing-hero">
       <div class="landing-shell landing-hero__content">
-        <img
-          class="landing-hero__brand block dark:hidden"
-          src="/logo.png"
-          alt="Sciance"
-        >
-        <img
-          class="landing-hero__brand hidden dark:block"
-          src="/logo-dark.webp"
-          alt="Sciance"
-        >
         <p class="landing-eyebrow">
           Documentation
         </p>
@@ -145,13 +135,6 @@
 .landing-hero__content {
   position: relative;
   padding: 5rem 0 4rem;
-}
-
-.landing-hero__brand {
-  width: 15rem;
-  max-width: 70vw;
-  height: auto;
-  margin-bottom: 2rem;
 }
 
 .landing-hero h1 {
@@ -353,11 +336,6 @@
 
   .landing-hero h1 {
     font-size: 2.5rem;
-  }
-
-  .landing-hero__brand {
-    width: 12rem;
-    margin-bottom: 1.5rem;
   }
 
   .landing-hero__lead {
