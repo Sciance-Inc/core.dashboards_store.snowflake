@@ -3,8 +3,13 @@
     <section class="landing-hero">
       <div class="landing-shell landing-hero__content">
         <img
-          class="landing-hero__brand"
-          src="/logo-sciance.svg"
+          class="landing-hero__brand block dark:hidden"
+          src="/logo.png"
+          alt="Sciance"
+        >
+        <img
+          class="landing-hero__brand hidden dark:block"
+          src="/logo-dark.webp"
           alt="Sciance"
         >
         <p class="landing-eyebrow">
@@ -121,7 +126,6 @@
 }
 
 .landing-hero__brand {
-  display: block;
   width: 15rem;
   max-width: 70vw;
   height: auto;
