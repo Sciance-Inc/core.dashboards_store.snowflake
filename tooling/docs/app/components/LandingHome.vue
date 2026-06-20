@@ -90,6 +90,28 @@
         </div>
       </div>
     </section>
+
+    <section class="landing-section">
+      <div class="landing-shell">
+        <div class="landing-edition">
+          <p class="landing-eyebrow">
+            Édition standard
+          </p>
+          <h2>Vous n'utilisez pas Snowflake ?</h2>
+          <p class="landing-edition__lead">
+            La <em>Bibliothèque</em> existe aussi en <strong>édition standard</strong>, avec sa propre documentation.
+          </p>
+          <a
+            class="landing-button landing-button--primary"
+            href="https://docs.dashboards-store.sciance.ca/fr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ouvrir la documentation standard →
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -279,6 +301,31 @@
 
 .landing-list a:hover {
   border-color: var(--landing-accent);
+}
+
+.landing-edition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--landing-accent) 35%, transparent);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--landing-accent) 8%, transparent);
+}
+
+.landing-edition h2 {
+  margin: 0;
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+.landing-edition__lead {
+  max-width: 40rem;
+  margin: 1rem 0 2rem;
+  color: var(--landing-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 
 @media (max-width: 900px) {
