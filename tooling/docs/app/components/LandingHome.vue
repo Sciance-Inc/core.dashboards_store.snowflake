@@ -1,6 +1,28 @@
 <template>
   <main class="landing-home">
     <section class="landing-hero">
+      <div class="landing-hero__flake" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <g id="hero-flake-arm">
+              <line x1="100" y1="100" x2="100" y2="22" />
+              <line x1="100" y1="66" x2="122" y2="50" />
+              <line x1="100" y1="66" x2="78" y2="50" />
+              <line x1="100" y1="46" x2="116" y2="34" />
+              <line x1="100" y1="46" x2="84" y2="34" />
+              <line x1="100" y1="30" x2="109" y2="22" />
+              <line x1="100" y1="30" x2="91" y2="22" />
+            </g>
+          </defs>
+          <use href="#hero-flake-arm" transform="rotate(0 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(60 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(120 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(180 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(240 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(300 100 100)" />
+          <polygon points="100,91 107.79,95.5 107.79,104.5 100,109 92.21,104.5 92.21,95.5" />
+        </svg>
+      </div>
       <div class="landing-shell landing-hero__content">
         <p class="landing-eyebrow">
           Documentation
@@ -134,7 +156,38 @@
 
 .landing-hero__content {
   position: relative;
+  z-index: 1;
   padding: 5rem 0 4rem;
+}
+
+.landing-hero__flake {
+  position: absolute;
+  top: 50%;
+  right: clamp(-3rem, 1vw, 3rem);
+  transform: translateY(-50%);
+  width: min(40vw, 460px);
+  color: var(--landing-accent);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.landing-hero__flake svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dark .landing-hero__flake {
+  opacity: 0.16;
+}
+
+@media (max-width: 768px) {
+  .landing-hero__flake {
+    width: 60vw;
+    right: -12vw;
+    opacity: 0.06;
+  }
 }
 
 .landing-hero h1 {
