@@ -2,6 +2,23 @@
 
 
 
+## v0.2.0+20260621 (2026-06-21)
+
+### Documentation
+
+* docs: rafraîchir l'identité visuelle du site de documentation (#1) ([`d6b3fef`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/d6b3fef36419f05ff2bb9bac5a9b2e1869fdec5e))
+
+* docs: uniformiser les logos du site avec le site d'origine ([`d6b3fef`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/d6b3fef36419f05ff2bb9bac5a9b2e1869fdec5e))
+
+* docs: revoir le bandeau de la page d'accueil ([`d6b3fef`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/d6b3fef36419f05ff2bb9bac5a9b2e1869fdec5e))
+
+* docs: ajouter un renvoi vers l'édition standard sur la page d'accueil ([`d6b3fef`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/d6b3fef36419f05ff2bb9bac5a9b2e1869fdec5e))
+
+* docs: retirer le logo du bandeau d'accueil et le libellé du header ([`d6b3fef`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/d6b3fef36419f05ff2bb9bac5a9b2e1869fdec5e))
+
+* docs: ajouter un flocon de neige décoratif au bandeau d'accueil ([`d6b3fef`](https://github.com/Sciance-Inc/core.dashboards_store.snowflake/commit/d6b3fef36419f05ff2bb9bac5a9b2e1869fdec5e))
+
+
 ## v0.2.0+20260610 (2026-06-10)
 
 ### Features
