@@ -1,16 +1,33 @@
 <template>
   <main class="landing-home">
     <section class="landing-hero">
+      <div class="landing-hero__flake" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <g id="hero-flake-arm">
+              <line x1="100" y1="100" x2="100" y2="22" />
+              <line x1="100" y1="66" x2="122" y2="50" />
+              <line x1="100" y1="66" x2="78" y2="50" />
+              <line x1="100" y1="46" x2="116" y2="34" />
+              <line x1="100" y1="46" x2="84" y2="34" />
+              <line x1="100" y1="30" x2="109" y2="22" />
+              <line x1="100" y1="30" x2="91" y2="22" />
+            </g>
+          </defs>
+          <use href="#hero-flake-arm" transform="rotate(0 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(60 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(120 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(180 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(240 100 100)" />
+          <use href="#hero-flake-arm" transform="rotate(300 100 100)" />
+          <polygon points="100,91 107.79,95.5 107.79,104.5 100,109 92.21,104.5 92.21,95.5" />
+        </svg>
+      </div>
       <div class="landing-shell landing-hero__content">
-        <img
-          class="landing-hero__brand"
-          src="/logo-sciance.svg"
-          alt="Sciance"
-        >
         <p class="landing-eyebrow">
-          Documentation du Store Snowflake
+          Documentation
         </p>
-        <h1>Store Snowflake</h1>
+        <h1>Bibliothèque de tableaux de bord Snowflake</h1>
         <p class="landing-hero__lead">
           Un guide de travail pour construire, versionner et maintenir des tableaux de bord de formation professionnelle avec <em>Snowflake</em> et <em>dbt</em>.
         </p>
@@ -85,6 +102,28 @@
         </div>
       </div>
     </section>
+
+    <section class="landing-section">
+      <div class="landing-shell">
+        <div class="landing-edition">
+          <p class="landing-eyebrow">
+            Édition standard
+          </p>
+          <h2>Vous n'utilisez pas Snowflake ?</h2>
+          <p class="landing-edition__lead">
+            La <em>Bibliothèque</em> existe aussi en <strong>édition standard</strong>, avec sa propre documentation.
+          </p>
+          <a
+            class="landing-button landing-button--primary"
+            href="https://docs.dashboards-store.sciance.ca/fr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ouvrir la documentation standard →
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -117,15 +156,38 @@
 
 .landing-hero__content {
   position: relative;
+  z-index: 1;
   padding: 5rem 0 4rem;
 }
 
-.landing-hero__brand {
+.landing-hero__flake {
+  position: absolute;
+  top: 50%;
+  right: clamp(-3rem, 1vw, 3rem);
+  transform: translateY(-50%);
+  width: min(40vw, 460px);
+  color: var(--landing-accent);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.landing-hero__flake svg {
   display: block;
-  width: 15rem;
-  max-width: 70vw;
+  width: 100%;
   height: auto;
-  margin-bottom: 2rem;
+}
+
+.dark .landing-hero__flake {
+  opacity: 0.16;
+}
+
+@media (max-width: 768px) {
+  .landing-hero__flake {
+    width: 60vw;
+    right: -12vw;
+    opacity: 0.06;
+  }
 }
 
 .landing-hero h1 {
@@ -150,7 +212,6 @@
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 .landing-actions {
@@ -278,6 +339,31 @@
   border-color: var(--landing-accent);
 }
 
+.landing-edition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--landing-accent) 35%, transparent);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--landing-accent) 8%, transparent);
+}
+
+.landing-edition h2 {
+  margin: 0;
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+.landing-edition__lead {
+  max-width: 40rem;
+  margin: 1rem 0 2rem;
+  color: var(--landing-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
 @media (max-width: 900px) {
   .landing-hero h1 {
     font-size: 3rem;
@@ -303,11 +389,6 @@
 
   .landing-hero h1 {
     font-size: 2.5rem;
-  }
-
-  .landing-hero__brand {
-    width: 12rem;
-    margin-bottom: 1.5rem;
   }
 
   .landing-hero__lead {

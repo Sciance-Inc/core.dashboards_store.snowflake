@@ -106,7 +106,7 @@ export default defineNuxtConfig({
         lang: 'fr'
       },
       link: [
-        { rel: 'icon', href: '/favicon.svg' },
+        { rel: 'icon', href: '/favicon.ico' },
         { rel: 'canonical', href: 'https://docs-snowflake.dashboards-store.sciance.ca/fr' }
       ]
     }

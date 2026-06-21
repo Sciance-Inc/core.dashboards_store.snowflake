@@ -20,25 +20,6 @@ body {
   letter-spacing: 0;
 }
 
-.sciance-wordmark {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.04rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  color: var(--color-sciance-ink);
-}
-
-.dark .sciance-wordmark {
-  color: #ffffff;
-}
-
-.sciance-wordmark__s {
-  color: var(--color-sciance-blue);
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
 .page-metadata {
   margin: 1rem 0 1.5rem;
   padding: 0.625rem 0.875rem;
